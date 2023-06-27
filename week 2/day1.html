@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia|Trirong|Montserrat">
+            
+        <title>
+            css!
+        </title>
+        <style>
+            h3{
+                font-family: "Sofia", sans-serif;
+                color: black;
+                text-shadow: 2px 2px #FF0000;
+            }
+            th,td{
+                font-family: "Montserrat", serif;
+        
+            }
+            body{
+                background-color: #F96167;
+                display: flex;
+            
+            }
+            .section-1{
+                padding: 30px;
+                border: 2px solid;
+            }
+            .section-2{
+                padding:80px ;
+                margin-left: 20px;
+                border: 2px solid;
+            }
+            #submit,#reset{
+
+                background-color:burlywood;
+                border-radius: 20px;
+                padding: 10px;
+                
+            }
+            #name,#mail,#number,#description,#department{
+                background-color: #F9E795;
+                border-radius: 20px;
+                padding:15px;
+            }
+            .title-1,.title-2{
+                background-color: aliceblue;
+            }
+            .row,.row-1,.row-2,.row-3,.row-4{
+                background-color: #F9E795;
+            }
+            
+
+        </style>
+    </head>
+    <body>
+        <section class="section-1">
+            <center>
+                <h3 class="title-1">FORMS AND TABLES</h3>
+            </center>
+            <form>
+                <table>
+                    <tr>
+                        <th><label for="name">NAME:</label></th>
+                        <td><input type="text" id="name" name="name" placeholder="enter your name" required pattern="[A-Za-z]+"></td>
+                    </tr>
+                    <tr>
+                        <th><label for="email">EMAIL:</label></th>
+                        <td><input type="email" id="mail" name="email" placeholder="enter your email" required></td>
+                    </tr>
+                    <tr>
+                        <th><label for="age">AGE:</label>
+                        </th>
+                        <td><input type="number" id="number" name="age" min="15" max="20" required><br /></td>
+                    </tr>
+                    <tr>
+                        <th><label for="food">FOOD:</label></th>
+                
+                        <td><input type="radio" id="veg" name="fav_food" value="Veg">
+                            <label for="veg">Veg</label>
+                            <input type="radio" id="non-veg" name="fav_food" value="non-veg">
+                            <label for="non-veg">Non-veg</label>
+                            <input type="radio" id="Chinese" name="fav_food" value="Chinese">
+                            <label for="Chinese">Chinese</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label for="department">department</label>
+                        </th>
+                        <td>
+                            <select id="department">
+                                <option value="Cse">Computer Science eng.</option>
+                                <option value="It">Information Technology eng.</option>
+                                <option value="ece">Electroinc and communication eng.</option>
+                                <option value="eee">Electical and electronic eng.</option>
+                            </select>
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <th>
+                            <label for="description">description</label>
+                        </th>
+                        <td>
+                            <textarea name="description" id="description" cols="20px" rows="5px"></textarea>
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <th>
+                            <input type="submit" id="submit">
+                        </th>
+                        <td>
+                            <input type="reset" id="reset" >
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </section>
+        <section class="section-2">
+            <center><h3 class="title-2">USER DETAILS</h3></center>
+            <table border="1" class="table">
+                <center>
+                 <tr class="row">
+                    <th>S.no</th>
+                    <th>NAME</th>
+                    <th>EMAIL</th>
+                    <th>AGE</th>
+                    <th>FOOD</th>
+                    <th>DEPARTMENT</th>
+                    <th>DESCRIPTION</th>
+                 </tr>
+                 <tr class="row-1">
+                    <td>1</td>
+                    <td>John</td>
+                    <td>john@gmail.com</td>
+                    <td>18</td>
+                    <td>veg</td>
+                    <td>Information Technology</td>
+                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, rem.</td>
+                 </tr>
+                 <tr class="row-2">
+                    <td>2</td>
+                    <td>Peter</td>
+                    <td>peter@gmail.com</td>
+                    <td>17</td>
+                    <td>Non-veg</td>
+                    <td>Electrical and Communication Eng.</td>
+                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, ea?</td>
+                 </tr>
+                 <tr class="row-3">
+                    <td>3</td>
+                    <td>Peter</td>
+                    <td>peter@gmail.com</td>
+                    <td>17</td>
+                    <td>Non-veg</td>
+                    <td>Electrical and Communication Eng.</td>
+                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, ea?</td>
+                 </tr>
+                 <tr class="row-4">
+                    <td>4</td>
+                    <td>John</td>
+                    <td>john@gmail.com</td>
+                    <td>18</td>
+                    <td>veg</td>
+                    <td>Information Technology</td>
+                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, rem.</td>
+                 </tr>
+                </center>
+            </table>
+        </section>
+    </body>
+</html>

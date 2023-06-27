@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+          <h1>Country Data</h1>
+          <div>
+            <input type="text" id="searchInput" placeholder="Search by country name">
+            <select id="select-option">
+              <option value="nameAsc">Name (Ascending)</option>
+              <option value="nameDesc">Name (Descending)</option>
+              <option value="populationAsc">Population (Ascending)</option>
+              <option value="populationDesc">Population (Descending)</option>
+            </select>
+          </div>
+        </header>
+        <main>
+          <div id="countrydiv"></div>
+          <div id="paginationContainer" class="pagination"></div>
+        </main>
+      </div>
+
+      <script type="module" src="./app.js"></script>
+</body>
+</html>

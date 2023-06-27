@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <input type="text" id="input" >
+    <input type="submit" id="submit" value="submit">
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+</body>
+<script>
+    
+    let inputValue = document.getElementById("input").value;   
+    document.getElementById("submit").addEventListener("click",(event)=>{
+        event.preventDefault()
+        console.log("hello");
+        
+        reverseValue(inputValue);
+        oddEven(inputValue);
+    })
+    function reverseValue(inputValue){
+        
+    var forward = document.getElementById("input").value;
+    var backward = forward.split("").reverse().join("");
+    document.getElementById("demo1").innerHTML = backward;
+    }
+
+    function oddEven(inputValue){
+    let value = document.getElementById("input").value,
+    odd = [],
+    even = [];
+    ans = [];
+
+for (var i = 0; i < value.length; i++) {
+  i % 2 === 0
+    ? even.push(value[i]) 
+    : odd.push(value[i])
+}
+
+    ans =   even.concat(odd);
+    let ansStr = ans.toString();
+    document.getElementById("demo2").innerHTML = ansStr;
+    }
+
+</script>
+</html>

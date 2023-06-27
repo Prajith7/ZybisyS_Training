@@ -1,0 +1,51 @@
+#blurbg{
+    display: none;
+    position:fixed;
+    top:0%;
+    left:0%;
+    width:100%;
+    height:100%;
+    background-color:bisque;
+    z-index:999;
+}
+#popup{
+    display: none;
+    position: fixed;
+    top:50%;
+    left:50%;
+    background-color: aliceblue;
+    font-size: 30px;
+    padding:20px;
+    transform:translate(-50%, -50%);
+    z-index:1000;
+}
+#loader{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    border: 4px solid #8d8d8d;
+    border-radius: 50%;
+    border-top:  4px solid rgba(54, 54, 222, 0.943);
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+#closeIcon{
+    position :absolute;
+    top:5%;
+    left:5%;
+    font-size: 28px;
+    cursor : pointer;
+}

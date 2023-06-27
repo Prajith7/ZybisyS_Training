@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .frame{
+            display: flex;
+            gap:3px;
+        }
+        .start-active,
+        .stop-active{
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="frame">
+            <div class="hrs">00</div>
+            <div class="coln">:</div>
+            <div class="mins">00</div>
+            <div class="cols">:</div>
+            <div class="sec">00</div>
+            <div class="cols">:</div>
+            <div class="ms">00</div>
+        </div>
+        <div class="button">
+            <button class="start">Start</button>
+            <button class="stop">Stop</button>
+            <button class="reset">reset</button>
+        </div>
+
+    </div>
+    <script>
+        let btnStart = document.querySelector('.start');
+        let btnStop = document.querySelector('.stop');
+        let btnReset = document.querySelector('.reset');
+
+        let hrs=mins=sec=ms=0 , startTimer;
+
+        btnStart.addEventListener('click',()=>{
+            btnStart.classList.add('.start-active');
+            btnStop.classList.remove('.stop-active');
+
+
+            startTimer = setInterval(()=>{
+                ms++;
+                if(ms==100)
+                {
+                    sec++;
+                    ms=0;
+                }
+               
+                if(sec==60){
+                    mins++;
+                    sec=0
+                }
+                if(mins==60){
+                    hrs++;
+                    mins=0;
+                }
+                updateDisplay();
+            },10);
+
+        });
+
+        btnStop.addEventListener('click',()=>{
+            clearInterval(startTimer);
+            btnStart.classList.remove('.start-active')
+            btnStop.classList.add('.start-remove');
+
+
+        })
+        btnReset.addEventListener('click',()=>{
+            hs=mins=sec=ms=0;
+            clearInterval(startTimer);
+            updateDisplay();
+            btnStart.classList.remove('.start-active')
+            btnStop.classList.remove('.start-active');
+
+        })
+
+        function updateDisplay(){
+            phrs = hrs<10 ? '0'+hrs:hrs;
+            pmins = mins<10 ? '0'+ mins : mins;
+            psec = sec<10 ?'0 '+ sec : sec;
+            pms = ms < 10 ? '0 ' + ms : ms;
+           
+
+            document.querySelector('.hrs').innerText=phrs;
+            document.querySelector('.mins').innerText = pmins;
+            document.querySelector('.sec').innerText = psec;
+            document.querySelector('.ms').innerText = pms;
+           
+            
+        }
+
+
+    </script>
+</body>
+</html>

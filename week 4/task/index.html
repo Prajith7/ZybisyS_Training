@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section id="form">
+        <input type="text" id="text" placeholder="type here">
+        <input type="button" id="button" value="task" onclick="addTask()">
+    </section>
+    <section class="list">
+        <ul id="mylist"></ul>
+    </section>
+<script>
+    function addTask(){
+        let content = document.getElementById("text").value;
+        let promise = new Promise((resolve, reject) => {
+            if ( content.length < 10){
+                resolve();
+            }
+            else{
+                reject();
+            }
+        });
+        promise
+        .then(()=>{
+        setTimeout(()=>{
+            let ul = document.getElementById("mylist");
+            let li = document.createElement("li");
+            li.innerHTML = content;
+            ul.appendChild(li);
+
+        },2000)
+
+       })
+       .catch(() => {
+        alert("length is greater!")
+       });
+    }
+</script>
+</body>
+</html>
